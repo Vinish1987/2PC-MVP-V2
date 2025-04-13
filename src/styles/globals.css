@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 260 100% 97%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 252 80% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 252 80% 60%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 252 10% 95%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 252 80% 60%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 252 80% 60%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 252 80% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 252 80% 60%;
+    /* Navy and green colors for SmartLoanScreen */
+    --navy-50: 252 80% 96%;
+    --navy-100: 252 80% 90%;
+    --navy-500: 252 80% 60%;
+    --navy-700: 252 80% 50%;
+    --navy-800: 252 80% 40%;
+    /* Royal violet color */
+    --royal-violet: 252 80% 60%;
+    /* App background color */
+    --app-background: #E4E1FF;
+    /* Input text color */
+    --input-text: #5E5ADB;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 252 80% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Navy and green colors for SmartLoanScreen in dark mode */
+    --navy-50: 252 30% 15%;
+    --navy-100: 252 30% 20%;
+    --navy-500: 252 70% 50%;
+    --navy-700: 252 70% 60%;
+    --navy-800: 252 70% 70%;
+    /* Royal violet color */
+    --royal-violet: 252 80% 60%;
+    /* App background color */
+    --app-background: #E4E1FF;
+    /* Input text color */
+    --input-text: #5E5ADB;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  h1 {
+    @apply text-2xl md:text-3xl;
+  }
+  h2 {
+    @apply text-xl md:text-2xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  input, textarea, select {
+    @apply text-[#5E5ADB];
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 md:px-6 lg:px-8 max-w-7xl w-full;
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Custom utility classes for SmartLoanScreen */
+  .bg-navy-50 {
+    background-color: hsl(var(--navy-50));
+  }
+  .bg-navy-100 {
+    background-color: hsl(var(--navy-100));
+  }
+  .bg-navy-500 {
+    background-color: hsl(var(--navy-500));
+  }
+  .bg-navy-700 {
+    background-color: hsl(var(--navy-700));
+  }
+  .bg-navy-800 {
+    background-color: hsl(var(--navy-800));
+  }
+  .text-navy-500 {
+    color: hsl(var(--navy-500));
+  }
+  .text-navy-700 {
+    color: hsl(var(--navy-700));
+  }
+  .text-navy-800 {
+    color: hsl(var(--navy-800));
+  }
+  .border-navy-100 {
+    border-color: hsl(var(--navy-100));
+  }
+  
+  /* Royal violet color utility */
+  .bg-royal-violet {
+    background-color: #5E5ADB;
+  }
+  .text-royal-violet {
+    color: #5E5ADB;
+  }
+  .border-royal-violet {
+    border-color: #5E5ADB;
+  }
+  
+  /* Card styling */
+  .card {
+    @apply bg-white rounded-xl shadow-sm p-4;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    @apply shadow-md;
+    transform: translateY(-2px);
+  }
+  
+  /* Button styling */
+  .btn-primary {
+    @apply bg-[#5E5ADB] text-white rounded-lg px-4 py-2 font-medium;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-[#4F4BBD];
+  }
+  
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border border-[#5E5ADB] text-[#5E5ADB] rounded-lg px-4 py-2 font-medium;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-[#5E5ADB]/10;
+  }
+  
+  .btn-secondary:active {
+    transform: scale(0.98);
+  }
+  
+  /* Section spacing */
+  .section-spacing {
+    @apply my-6;
+  }
+  
+  /* Page container */
+  .page-container {
+    @apply p-4 sm:p-6 max-w-md mx-auto;
+  }
+  
+  /* Screen transitions */
+  .page-transition {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  /* CTA card */
+  .cta-card {
+    @apply bg-[#5E5ADB] text-white rounded-xl shadow-md p-4;
+  }
+}
